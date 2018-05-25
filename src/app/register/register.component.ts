@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-  login(value) {
+  signup(value) {
     let userDetails = this.registerForm.value;
     this.register = this.service.register(userDetails).then(
         (res: any) => {

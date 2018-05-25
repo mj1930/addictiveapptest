@@ -8,19 +8,14 @@
           <label>Email*</label>
         <input type="email" class="form-control" formControlName="email" placeholder="Email">
         <div *ngIf="loginForm.controls['email'].errors && loginForm.controls['email'].touched" class="error-msg">
-          <div [hidden]="!loginForm.controls['email'].errors.required">You have to fill in email to register.</div>
-          <div [hidden]="!loginForm.controls['email'].errors.minlength">Min 5 characters required.</div>
-          <div [hidden]="!loginForm.controls['email'].errors.maxlength">Max 30 characters allowed.</div>
-          <div [hidden]="!loginForm.controls['email'].errors.validateEmail">Invalid email address.</div>
+          <div [hidden]="!loginForm.controls['email'].errors.required">You have to fill in email to login.</div>
         </div>
       </div>
       <div class="form-group col-sm-6">
           <label>Password*</label>
         <input type="password" class="form-control" formControlName="password" placeholder="Password">
         <div *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].touched" class="error-msg">
-          <div [hidden]="!loginForm.controls['password'].errors.required">You have to fill in password to register.</div>
-          <div [hidden]="!loginForm.controls['password'].errors.minlength">Min 6 characters required.</div>
-          <div [hidden]="!loginForm.controls['password'].errors.maxlength">Max 10 characters allowed.</div>
+          <div [hidden]="!loginForm.controls['password'].errors.required">You have to fill in password to login.</div>
         </div>
       </div>
       <div class="form-group col-sm-6">
@@ -30,5 +25,8 @@
         </label> 
       </div>
     </form>
+    <div class="col-sm-12" *ngIf="invalidLogin">
+      <h2 class="error-msg">Invalid Email/password.</h2>
+    </div>
   </div>
 </div>

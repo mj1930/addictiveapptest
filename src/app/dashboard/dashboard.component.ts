@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router, ActivatedRoute, Params, Route } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _router: Router
+  ) { }
 
   ngOnInit() {
   }
 
+  logout() {
+    localStorage.removeItem('token');
+    this._router.navigate(['/login']);
+  }
 }

@@ -5,6 +5,7 @@ import { ModuleWithProviders } from '@angular/core';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGaurdService } from './service/auth-gaurd.service';
 
 export const appRoutes: Routes = [
     {
@@ -13,7 +14,8 @@ export const appRoutes: Routes = [
     },
     {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        canActivate: [AuthGaurdService]
     },
     {
         path: 'login',

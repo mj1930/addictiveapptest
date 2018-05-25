@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { TextMaskModule } from 'angular2-text-mask';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGaurdService } from './service/auth-gaurd.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [AuthGaurdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
