@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row top">
+    <div class="col-sm-12">
+        <h2 >Login Form</h2>
+    </div>
+    <form [formGroup]="resetForm" class="col-sm-8">
+      <div class="form-group col-sm-6">
+          <label>Email*</label>
+        <input type="email" class="form-control" formControlName="email" placeholder="Email">
+        <div *ngIf="resetForm.controls['email'].errors && resetForm.controls['email'].touched" class="error-msg">
+          <div [hidden]="!resetForm.controls['email'].errors.required">You have to fill in email to reset password.</div>
+        </div>
+      </div>
+      <div class="form-group col-sm-6">
+        <input type="submit" class="col-sm-5 btn btn-primary" (click)="reset()" value="Reset Password" [disabled]="!resetForm.valid"/>
+      </div>
+    </form>
+    <div class="col-sm-12">
+      <label>Remember password?</label><a routerLink="/login">Login</a>
+    </div>
+  </div>
+  <div class="col-sm-12" *ngIf="sentEmail">
+    <h2>We have sent you a mail on your registered email. Please check the link to reset password.</h2>
+  </div>
+</div>

@@ -11,13 +11,17 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
+import { ForgetComponent } from './forget/forget.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    ForgetComponent,
+    ResetpasswordComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,8 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
+import { ForgetComponent } from './forget/forget.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 export const appRoutes: Routes = [
     {
@@ -20,6 +22,14 @@ export const appRoutes: Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+    {
+        path: 'forget',
+        component: ForgetComponent
+    },
+    {
+        path: 'reset-password/:token',
+        component: ResetpasswordComponent
     }
 ]
 
