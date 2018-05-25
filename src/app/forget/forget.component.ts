@@ -14,6 +14,8 @@ export class ForgetComponent implements OnInit {
   resetForm: FormGroup;
   sentEmail: boolean = false;
   resetService: Promise<any>;
+  msg: boolean = false;
+  message;
   constructor(
     private formBuilder: FormBuilder,
     private service: ForgetService,
@@ -34,8 +36,14 @@ export class ForgetComponent implements OnInit {
           this.sentEmail = true;
           setTimeout(() => {
             this._router.navigate(['login']);
-          }, 1000);
-          
+          }, 3000);
+        }
+        else {
+          this.msg = true;
+          this.message = res.msg;
+          setTimeout(() => {
+            this.message = res.msg;
+          }, 2000);
         }
       }
     )

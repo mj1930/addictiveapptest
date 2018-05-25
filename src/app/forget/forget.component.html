@@ -20,6 +20,9 @@
     </div>
   </div>
   <div class="col-sm-12" *ngIf="sentEmail">
-    <h2>We have sent you a mail on your registered email. Please check the link to reset password.</h2>
+    <h3>We have sent you a mail on your registered email. Please check the link to reset password.</h3>
+  </div>
+  <div class="col-sm-12" *ngIf="msg">
+    <h3>{{message}}</h3>
   </div>
 </div>
